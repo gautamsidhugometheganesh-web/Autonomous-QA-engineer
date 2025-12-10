@@ -1,0 +1,16 @@
+diff --git a/pyproject.toml b/pyproject.toml
+new file mode 100644
+index 0000000000000000000000000000000000000000..92c1299b4ff1d0732ed7540ab137df84c471747d
+--- /dev/null
++++ b/pyproject.toml
+@@ -0,0 +1,10 @@
++[project]
++name = "qa-agent"
++version = "0.1.0"
++description = "Autonomous QA agent scaffold"
++authors = [{name = "Autonomous QA Engineer"}]
++readme = "README.md"
++requires-python = ">=3.10"
++
++[project.scripts]
++qa-agent = "qa_agent.cli:main"
