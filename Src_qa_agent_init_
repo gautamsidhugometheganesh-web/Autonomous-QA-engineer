@@ -1,0 +1,12 @@
+diff --git a/src/qa_agent/__init__.py b/src/qa_agent/__init__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..4c768e30fd184fb5889bf74f19a8d23df28bafe5
+--- /dev/null
++++ b/src/qa_agent/__init__.py
+@@ -0,0 +1,6 @@
++"""Scaffold for an autonomous QA engineer agent."""
++
++__all__ = [
++    "models",
++    "storage",
++]
