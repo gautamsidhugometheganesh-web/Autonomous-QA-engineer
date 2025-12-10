@@ -1,0 +1,47 @@
+diff --git a/docs/roadmap.md b/docs/roadmap.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..3eb3d5bddc3e7e9cc71b8157f866c3077c105ba5
+--- /dev/null
++++ b/docs/roadmap.md
+@@ -0,0 +1,40 @@
++# Four-Week Delivery Plan for the Autonomous QA Engineer
++
++This roadmap assumes a small team and weekly deliverables that compound into an early usable product.
++
++## Week 1 – Discovery & Foundations
++- Confirm target environments (frameworks, auth flows, critical journeys) and capture a demo app for dogfooding.
++- Decide on browser automation stack (e.g., Playwright) and data format for captured user flows.
++- Ship a local workspace scaffold that can track flows, environments, and metadata.
++- Add basic CLI to initialize a workspace and record placeholder flows.
++- Draft success metrics (time to first auto-generated test, nightly pass rate, MTTD for regressions).
++
++## Week 2 – Flow Capture & Test Generation
++- Implement instrumentation to capture DOM events and convert them into portable steps.
++- Build a first-pass test synthesizer that converts captured flows into Playwright tests with resilient selectors.
++- Add deterministic fixture management (users, seeds) so replay is stable.
++- Provide a nightly scheduler entrypoint and local dry-run capability.
++- Start persisting run artifacts (logs, screenshots) to disk.
++
++## Week 3 – Autonomous Runs & Issue Creation
++- Wire scheduled runs to execute the generated tests headlessly on the latest main branch.
++- Detect flakiness versus real failures using retry heuristics and signal weighting.
++- Automatically draft GitHub issues with repro steps, environment, failing selectors, and screenshots.
++- Add simple learning loop: prioritize failing/high-churn flows for regeneration.
++
++## Week 4 – Hardening & Adoption
++- Add configuration validation, secrets handling, and per-environment overrides.
++- Integrate with CI (GitHub Actions template) and produce a minimal dashboard/report summary.
++- Build growth hooks: Slack/Email notifications for failures and weekly health summaries.
++- Document operational runbooks and add guardrails for destructive actions (e.g., feature flags for write paths).
++
++## Success Criteria
++- First automated flow captured and replayed end-to-end by Week 2.
++- Nightly scheduled run with artifacts by Week 3.
++- Issue creation with screenshots plus repro steps by Week 3-4.
++- <5% flaky test rate on the demo app by the end of Week 4.
++
++## Near-Term Next Steps (starting today)
++- Land workspace scaffolding and CLI to manage flows and configuration.
++- Define data models for flows, steps, and test cases to keep the agent pluggable.
++- Provide a basic “plan run” action to show how nightly executions will be orchestrated.
+                                                                             
